@@ -1,0 +1,35 @@
+body{
+    color:white;
+}
+
+.wrapper{
+    background-color: #434343;
+    width: 60vw;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.header{
+    text-align: center;
+}
+
+table{
+    margin:0 auto;
+    border: 1px solid white;
+    width: 98%;
+}
+
+.row{
+    margin:5px;
+    border: 1px solid white;
+}
+
+.col{
+    margin: 5px;
+    border: 1px solid white;
+}
+
+img{
+    width: 120px;
+    height: 90px;
+}
