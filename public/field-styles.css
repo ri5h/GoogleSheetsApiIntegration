@@ -1,0 +1,52 @@
+.main{
+    display:flex;
+}
+  
+.field-wrapper{
+    background-color:black;
+    margin: 20px auto;
+    display:inline-flex;
+    padding: 20px;
+}
+
+.base {
+    width: 0;
+    height: 0;
+    border: 50px solid transparent;
+    border-bottom-color: gray;
+    position: relative;
+    top: -50px;
+    }
+.base:after {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border: 50px solid transparent;
+    border-top-color: gray;
+}
+
+.active{
+    border-bottom-color: yellow;
+}
+
+.active:after{
+    border-top-color: yellow;
+}
+
+.base-1, .base-3{
+    margin-top:70px;
+}
+
+.base-2{
+    margin-right:-35px;
+    margin-left:-35px;
+}
+
+
+/* Input for testing */
+.form{
+    margin: 20px auto;
+}
