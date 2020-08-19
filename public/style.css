@@ -1,12 +1,40 @@
+@font-face {
+    font-family: 'DSEG7-Classic';
+    src: url('fonts/DSEG14Classic-Regular.woff2') format('woff2'),
+    url('fonts/DSEG14Classic-Regular.woff') format('woff'),
+    url('fonts/DSEG14Classic-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 body{
     color:white;
+    text-align: center;
 }
 
-.wrapper{
+.number {
+    font-family: 'DSEG7-Classic';
+    line-height: 60px;
+    font-size: 40px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.team-name {
+    line-height: 60px;
+    font-size: 25px;
+    width: 100px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.wrapper {
     background-color: #434343;
-    width: 60vw;
-    padding: 10px;
-    margin: 20px auto;
+    min-width: 900px;
+    width: 900px;
+    padding: 1rem;
+    margin: 2rem auto;
+    overflow: scroll;
 }
 
 .header{
@@ -19,7 +47,7 @@ table{
     width: 98%;
 }
 
-.row{
+/* .row{
     margin:5px;
     border: 1px solid white;
 }
@@ -27,9 +55,24 @@ table{
 .col{
     margin: 5px;
     border: 1px solid white;
-}
+} */
 
 img{
     width: 120px;
     height: 90px;
+}
+
+.text-yellow{
+    color:yellow;
+}
+.text-red{
+    color:red;
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.border-white{
+    border: 1px solid white;
 }

@@ -4,27 +4,27 @@
   
 .field-wrapper{
     background-color:black;
-    margin: 20px auto;
     display:inline-flex;
-    padding: 20px;
+    margin-left: -2rem;
+    padding: 10px;
 }
 
 .base {
     width: 0;
     height: 0;
-    border: 50px solid transparent;
+    border: 1.5rem solid transparent;
     border-bottom-color: gray;
     position: relative;
-    top: -50px;
+    top: -1.5rem;
     }
 .base:after {
     content: '';
     position: absolute;
-    left: -50px;
-    top: 50px;
+    left: -1.5rem;
+    top: 1.5rem;
     width: 0;
     height: 0;
-    border: 50px solid transparent;
+    border: 1.5rem solid transparent;
     border-top-color: gray;
 }
 
@@ -37,16 +37,10 @@
 }
 
 .base-1, .base-3{
-    margin-top:70px;
+    margin-top:2rem;
 }
 
 .base-2{
-    margin-right:-35px;
-    margin-left:-35px;
-}
-
-
-/* Input for testing */
-.form{
-    margin: 20px auto;
+    margin-right:-1rem;
+    margin-left:-1rem;
 }

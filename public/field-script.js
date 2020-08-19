@@ -13,41 +13,17 @@ function updateField(field){
     if(field.base3) base3.classList.add("active")
     
   }
-  
-  function updateUI(){  
-    var ck_base_1 = document.getElementById("ck_b_1").checked;
-    var ck_base_2 = document.getElementById("ck_b_2").checked;
-    var ck_base_3 = document.getElementById("ck_b_3").checked;
-    
-    var field = {
-      base1:ck_base_1,
-      base2:ck_base_2,
-      base3:ck_base_3
-    }
-    
-    updateField(field);
-  }
-  
 
   window.addEventListener('load', (event) => {
-    console.log('page is fully loaded');
-    
-    // Input for testing
-    var ck_base_1 = document.getElementById("ck_b_1");
-    ck_base_1.addEventListener( 'change', () => updateUI());
-    
-    var ck_base_2 = document.getElementById("ck_b_2");
-    ck_base_2.addEventListener( 'change', () => updateUI());
-    
-    var ck_base_3 = document.getElementById("ck_b_3");
-    ck_base_3.addEventListener('change', () => updateUI())
-    
-    
-    //default state
+
+    var chk_b_1 = (document.getElementById("chk_b_1").innerHTML == true);
+    var chk_b_2 = (document.getElementById("chk_b_2").innerHTML == true);
+    var chk_b_3 = (document.getElementById("chk_b_3").innerHTML == true);
+  
     updateField({
-        base1:true,
-        base2:false,
-        base3:true
+        base1:chk_b_1,
+        base2:chk_b_2,
+        base3:chk_b_3
     });
         
   });
