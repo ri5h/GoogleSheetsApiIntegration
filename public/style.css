@@ -1,50 +1,50 @@
 @font-face {
-    font-family: 'DSEG7-Classic';
-    src: url('fonts/DSEG14Classic-Regular.woff2') format('woff2'),
-    url('fonts/DSEG14Classic-Regular.woff') format('woff'),
-    url('fonts/DSEG14Classic-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: "DSEG7-Classic";
+  src: url("fonts/DSEG14Classic-Regular.woff2") format("woff2"),
+    url("fonts/DSEG14Classic-Regular.woff") format("woff"),
+    url("fonts/DSEG14Classic-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-body{
-    color:white;
-    text-align: center;
+body {
+  color: white;
+  text-align: center;
 }
 
 .number {
-    font-family: 'DSEG7-Classic';
-    line-height: 60px;
-    font-size: 40px;
-    width: 100px;
-    margin: 0 auto;
+  font-family: "DSEG7-Classic";
+  line-height: 60px;
+  font-size: 40px;
+  width: 100px;
+  margin: 0 auto;
 }
 
 .team-name {
-    line-height: 60px;
-    font-size: 25px;
-    width: 100px;
-    margin: 0 auto;
-    text-align: left;
+  line-height: 60px;
+  font-size: 25px;
+  width: 100px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .wrapper {
-    background-color: #434343;
-    min-width: 900px;
-    width: 900px;
-    padding: 1rem;
-    margin: 2rem auto;
-    overflow: scroll;
+  background-color: #434343;
+  min-width: 900px;
+  width: 900px;
+  padding: 1rem;
+  margin: 2rem auto;
+  overflow: scroll;
 }
 
-.header{
-    text-align: center;
+.header {
+  text-align: center;
 }
 
-table{
-    margin:0 auto;
-    border: 1px solid white;
-    width: 98%;
+table {
+  margin: 0 auto;
+  border: 1px solid white;
+  width: 98%;
 }
 
 /* .row{
@@ -57,22 +57,22 @@ table{
     border: 1px solid white;
 } */
 
-img{
-    width: 120px;
-    height: 90px;
+img {
+  width: 120px;
+  height: 90px;
 }
 
-.text-yellow{
-    color:yellow;
+.text-yellow {
+  color: yellow;
 }
-.text-red{
-    color:red;
-}
-
-.bg-black{
-    background-color: black;
+.text-red {
+  color: red;
 }
 
-.border-white{
-    border: 1px solid white;
+.bg-black {
+  background-color: black;
+}
+
+.border-white {
+  border: 1px solid white;
 }

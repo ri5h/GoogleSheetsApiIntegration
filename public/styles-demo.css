@@ -1,0 +1,58 @@
+/* Defaults : Responsive font size */
+.t1 {
+    font-size: 5.9vw;
+}
+.t2 {
+    font-size: 3.0vh;
+}
+.t3 {
+    font-size: 2vmin;
+}
+
+
+.wrapper{
+    background-color: white;
+    padding: 1rem 1rem;
+
+    /* Grid styles */
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1200px));
+}
+
+.scoreboard{
+    background-color: #434343;
+    margin: 0 auto;
+    padding: 0.4rem;
+    height: 100%;
+}
+
+.header{
+    text-align: center;
+    color: white;
+}
+.scoreboard-body{
+    border: 1px solid white;
+    padding: 0.4rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.sb-head{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+}
+
+.autobox{
+    background-color: black;
+}
+
+.gs2{
+    grid-row: span 2;
+}
+
+.gs3{
+    grid-row: span 3;
+}

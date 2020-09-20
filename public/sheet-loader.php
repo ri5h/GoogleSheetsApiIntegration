@@ -58,6 +58,9 @@ function getClient()
 
 
 function getData(){
+    
+    $datastr = '{"player":"11","vikings":"12","wildcats":"4","bases":{"position":{"base_1":"1","base_2":"1","base_3":"0"},"first_base":{"ball":"3","strike":"2","out":"1"},"second_base":{"ball":null,"strike":null,"out":null},"third_base":{"ball":null,"strike":null,"out":null}},"inning":{"home":["0","1","0","11"," "," "," "],"visitor":["1","0","2","1"," "," "," "],"total":{"home":"12","visitor":"4"}}}';
+    return json_decode($datastr, true);
 
     // Get the API client and construct the service object.
     $client = getClient();

@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "DSEG7-Classic";
+  src: url("fonts/Seven Segment.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  font-size: min(max(1rem, 4vw), 28px);
+}
+
+.scorecard {
+  background-color: #434343;
+}
+
+.scoreboard-body {
+  border: 1px solid white;
+}
+
+.col-title {
+  color: white;
+  text-align: center;
+  font-size: min(max(0.8rem, 3vw), 20px);
+}
+
+.col-body {
+  color: yellow;
+  background-color: black;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.col-body-number {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.number {
+  font-family: "DSEG7-Classic";
+  font-size: min(max(1.5rem, 5vw), 40px);
+}
+
+.number-score {
+  font-family: "DSEG7-Classic";
+  font-size: min(max(1.5rem, 5vw), 40px);
+}
+
+/* Utils */
+.bg-black {
+  background-color: black;
+}
+
+.text-red {
+  color: red;
+}
+.innings-text {
+  color: white;
+  font-size: min(max(1rem, 3vw), 30px);
+  line-height: min(max(2rem, 6vw), 60px);
+}
+
+@media only screen and (max-width: 1024px) {
+  #bottom-row .col {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
