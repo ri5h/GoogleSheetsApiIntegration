@@ -3,7 +3,7 @@
 $sheetId = $_GET["sheetId"] ?? exit("Sheet Id is Missing in the Url, please check the link");
 
 // Load data from Sheet
-require_once '../src/sheet-loader.php';
+require_once 'sheet-loader.php';
 $data = getData($sheetId);
 
 $data['base_1_col'] = $data['bases']['position']['base_1'] === "1" ? "#ffff00" : "#999999";

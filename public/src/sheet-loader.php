@@ -35,7 +35,7 @@ function getClient()
             $authUrl = $client->createAuthUrl();
             printf("Open the following link in your browser:\n%s\n", $authUrl);
             print 'Enter verification code: ';
-            $authCode = trim(fgets(STDIN));
+            $authCode = trim($_GET["code"]);
 
             // Exchange authorization code for an access token.
             $accessToken = $client->fetchAccessTokenWithAuthCode($authCode);
@@ -50,6 +50,7 @@ function getClient()
         if (!file_exists(dirname($tokenPath))) {
             mkdir(dirname($tokenPath), 0700, true);
         }
+        echo json_encode($client->getAccessToken());
         file_put_contents($tokenPath, json_encode($client->getAccessToken()));
     }
     return $client;
@@ -59,8 +60,8 @@ function getClient()
 function getData($sheetId)
 {
 
-    $datastr = '{"title":"The National Championship","home_team_name":"Socks","visitor_team_name":"Wildcats","home_team_score":"10","visitor_team_score":"4","player":"11","bases":{"position":{"base_1":"1","base_2":"1","base_3":"0"},"current_score":{"ball":"3","strike":"2","out":"1"}},"inning":{"home":["0","1","0","9","&nbsp;","&nbsp;","&nbsp;","&nbsp;","&nbsp;"],"visitor":["1","0","2","1","&nbsp;","&nbsp;","&nbsp;","&nbsp;","&nbsp;"],"total":{"home":"10","visitor":"4"}}}';
-    return json_decode($datastr, true);
+    // $datastr = '{"title":"The National Championship","home_team_name":"Socks","visitor_team_name":"Wildcats","home_team_score":"10","visitor_team_score":"4","player":"11","bases":{"position":{"base_1":"1","base_2":"1","base_3":"0"},"current_score":{"ball":"3","strike":"2","out":"1"}},"inning":{"home":["0","1","0","9","&nbsp;","&nbsp;","&nbsp;","&nbsp;","&nbsp;"],"visitor":["1","0","2","1","&nbsp;","&nbsp;","&nbsp;","&nbsp;","&nbsp;"],"total":{"home":"10","visitor":"4"}}}';
+    // return json_decode($datastr, true);
 
     // Get the API client and construct the service object.
     $client = getClient();

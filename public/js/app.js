@@ -1,4 +1,7 @@
 function updateEl(id, value) {
+  if ("" === value.trim()) {
+    value = "&nbsp;";
+  }
   document.getElementById(id).innerHTML = value;
 }
 
