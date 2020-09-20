@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 
 /**
@@ -11,7 +11,7 @@ function getClient()
     $client = new Google_Client();
     $client->setApplicationName('Google Sheets API Access');
     $client->setScopes(Google_Service_Sheets::SPREADSHEETS_READONLY);
-    $client->setAuthConfig('../credentials.json');
+    $client->setAuthConfig('../../credentials.json');
     $client->setAccessType('offline');
     $client->setPrompt('select_account consent');
 
@@ -19,7 +19,7 @@ function getClient()
     // The file token.json stores the user's access and refresh tokens, and is
     // created automatically when the authorization flow completes for the first
     // time.
-    $tokenPath = '../token.json';
+    $tokenPath = '../../token.json';
     if (file_exists($tokenPath)) {
         $accessToken = json_decode(file_get_contents($tokenPath), true);
         $client->setAccessToken($accessToken);
@@ -56,10 +56,10 @@ function getClient()
 }
 
 
-function getData()
+function getData($sheetId)
 {
 
-    $datastr = '{"player":"11","vikings":"12","wildcats":"4","bases":{"position":{"base_1":"1","base_2":"1","base_3":"0"},"first_base":{"ball":"3","strike":"2","out":"1"},"second_base":{"ball":null,"strike":null,"out":null},"third_base":{"ball":null,"strike":null,"out":null}},"inning":{"home":["0","1","0","11"," "," "," "],"visitor":["1","0","2","1"," "," "," "],"total":{"home":"12","visitor":"4"}}}';
+    $datastr = '{"title":"The National Championship","home_team_name":"Socks","visitor_team_name":"Wildcats","home_team_score":"10","visitor_team_score":"4","player":"11","bases":{"position":{"base_1":"1","base_2":"1","base_3":"0"},"current_score":{"ball":"3","strike":"2","out":"1"}},"inning":{"home":["0","1","0","9","&nbsp;","&nbsp;","&nbsp;","&nbsp;","&nbsp;"],"visitor":["1","0","2","1","&nbsp;","&nbsp;","&nbsp;","&nbsp;","&nbsp;"],"total":{"home":"10","visitor":"4"}}}';
     return json_decode($datastr, true);
 
     // Get the API client and construct the service object.
@@ -67,59 +67,55 @@ function getData()
     $service = new Google_Service_Sheets($client);
     $data = [];
 
-    $spreadsheetId = '11fClC_NhZ6uchStr9fEOKz9a3qITRrT1rT_9UiX_mA4';
-    $range = 'A1:I14';
-    $response = $service->spreadsheets_values->get($spreadsheetId, $range);
+    $range = 'A1:K17';
+    $response = $service->spreadsheets_values->get($sheetId, $range);
     $values = $response->getValues();
 
     $data = [
-        "player" => $values[0][1],
-        "vikings" => $values[1][1],
-        "wildcats" => $values[2][1],
+        "title" => $values[1][1],
+        "home_team_name" => $values[2][1],
+        "visitor_team_name" => $values[3][1],
+        "home_team_score" => $values[2][2],
+        "visitor_team_score" => $values[3][2],
+        "player" => $values[4][1],
         "bases" => [
             "position" => [
-                "base_1" => $values[4][1],
-                "base_2" => $values[4][2],
-                "base_3" => $values[4][3],
+                "base_1" => $values[8][1],
+                "base_2" => $values[8][2],
+                "base_3" => $values[8][3],
             ],
-            "first_base" => [
-                "ball" => $values[5][1],
-                "strike" => $values[6][1],
-                "out" => $values[7][1],
-            ],
-            "second_base" => [
-                "ball" => $values[5][2],
-                "strike" => $values[6][2],
-                "out" => $values[7][2],
-            ],
-            "third_base" => [
-                "ball" => $values[5][3],
-                "strike" => $values[6][3],
-                "out" => $values[7][3],
+            "current_score" => [
+                "ball" => $values[9][1],
+                "strike" => $values[10][1],
+                "out" => $values[11][1],
             ]
         ],
         "inning" => [
             "home" => [
-                $values[12][1] ?? "&nbsp;",
-                $values[12][2] ?? "&nbsp;",
-                $values[12][3] ?? "&nbsp;",
-                $values[12][4] ?? "&nbsp;",
-                $values[12][5] ?? "&nbsp;",
-                $values[12][6] ?? "&nbsp;",
-                $values[12][7] ?? "&nbsp;",
+                $values[15][1] ?? "&nbsp;",
+                $values[15][2] ?? "&nbsp;",
+                $values[15][3] ?? "&nbsp;",
+                $values[15][4] ?? "&nbsp;",
+                $values[15][5] ?? "&nbsp;",
+                $values[15][6] ?? "&nbsp;",
+                $values[15][7] ?? "&nbsp;",
+                $values[15][8] ?? "&nbsp;",
+                $values[15][9] ?? "&nbsp;",
             ],
             "visitor" => [
-                $values[13][1] ?? "&nbsp;",
-                $values[13][2] ?? "&nbsp;",
-                $values[13][3] ?? "&nbsp;",
-                $values[13][4] ?? "&nbsp;",
-                $values[13][5] ?? "&nbsp;",
-                $values[13][6] ?? "&nbsp;",
-                $values[13][7] ?? "&nbsp;",
+                $values[16][1] ?? "&nbsp;",
+                $values[16][2] ?? "&nbsp;",
+                $values[16][3] ?? "&nbsp;",
+                $values[16][4] ?? "&nbsp;",
+                $values[16][5] ?? "&nbsp;",
+                $values[16][6] ?? "&nbsp;",
+                $values[16][7] ?? "&nbsp;",
+                $values[16][8] ?? "&nbsp;",
+                $values[16][9] ?? "&nbsp;",
             ],
             "total" => [
-                "home" => $values[12][8],
-                "visitor" => $values[13][8]
+                "home" => $values[15][10],
+                "visitor" => $values[16][10]
             ]
         ]
     ];
